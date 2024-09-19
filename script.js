@@ -59,6 +59,79 @@ function splitText(elem, tag) {
 splitText("h1", "span");
 
 //step3 - 인터벌 시간값을 3번째 인수로 전달하면 delay값이 설정됨
+//세번째 인수로 인터벌값이 있으면 각 반복요소에 누적해서 delay값 적용
+//만약 세번째 인수 없으면 그냥 0으로 초기화
+
+//// 1번째 방법
+// function splitText(elem, tag, interval) {
+// 	const el = document.querySelector(elem);
+// 	const el_text = el.innerText;
+// 	el.style.fontsize = "0px";
+
+// 	let resultText = "";
+// 	let counter = 0;
+
+// 	for (let letter of el_text) {
+// 		resultText += `<${tag} style = 'display:inline-block transition-delay:${
+// 			interval || 0 * counter++
+// 		}s'>${letter}</${tag}>`;
+// 	}
+// 	console.log(resultText);
+
+// 	el.innerHTML = resultText;
+// }
+
+// splitText("h1", "span", 0.05);
+
+// // 2번째 방법
+// function splitText(elem, tag = "span", interval) {
+// 	const el = document.querySelector(elem);
+// 	const el_text = el.innerText;
+// 	el.style.fontsize = "0px";
+
+// 	let resultText = "";
+// 	let counter = 0;
+
+// 	for (let letter of el_text) {
+// 		resultText += `<${tag} style = 'display:inline-block transition-delay:${
+// 			interval * counter++
+// 		}s'>${letter}</${tag}>`;
+// 	}
+// 	console.log(resultText);
+
+// 	el.innerHTML = resultText;
+// }
+
+// splitText("h1", "span", 0.05);
+
+// 3번째 방법
+function splitText(elem, tag = "span", interval = 0) {
+	if (!elem) {
+		console.error(
+			"첫 번째 인수값은 텍스를 가져올 DOM선택자를 넣어야 됩니다."
+		);
+		//필수값인 elem요소가 전달되지 않으면 무조건 return으로 함수를 강제 중지해서
+		//불필요한 연산 처리 방지
+		return;
+	}
+	console.log("elem이 없을때 불필요한 연산 시작");
+	const el = document.querySelector(elem);
+	const el_text = el.innerText;
+	el.style.fontSize = "0px";
+	let resultText = "";
+	let counter = 0;
+
+	for (let letter of el_text) {
+		resultText += `<${tag} style='display:inline-block; transition-delay:${
+			interval * counter++
+		}s'>${letter}</${tag}>`;
+	}
+
+	el.innerHTML = resultText;
+}
+
+splitText("h1");
+
 //step4 - 세번째 인수값이 전달되지 않으면 무조건 delay값을 디폴트로 0처리
 
 //splitText('h1', 'span', 0.1)
