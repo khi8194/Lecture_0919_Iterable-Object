@@ -1,0 +1,27 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+section {
+  width: 800px;
+  height: 400px;
+  border: 1px solid #333;
+  margin: 100px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.2rem;
+}
+
+/*# sourceMappingURL=style.css.map */
