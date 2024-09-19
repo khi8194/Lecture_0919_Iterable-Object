@@ -136,6 +136,7 @@ splitText("h1");
 
 //splitText('h1', 'span', 0.1)
 
+// 혜인코드
 // const mission_txt = document.querySelector("h1").innerText;
 // // console.log(mission_txt);
 
@@ -147,5 +148,3 @@ splitText("h1");
 
 // mission_txt.innerHTML = new_letter;
 // console.log(new_letter);
-
-// getEl;
