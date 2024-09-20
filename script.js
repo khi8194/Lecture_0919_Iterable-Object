@@ -25,7 +25,7 @@ function splitText(elem, tag = "span", interval = 0) {
 	//인라인요소 사이의 간격 버그를 없애기 위해서 부모요소인 el에 font-size:0px을 스크립트로 자동 설정
 	//css에서 설정하지 않고 굳이 스크립트로 처리하는 이유는 타 작업자가 까먹고 안하거나 내가 두번 일하기 귀찮아서 자동화 처리한거임
 	el.style.fontSize = "0px";
-	//resultText라는 변숭는 앞으로 반복문을 통해 문자열로 반복돌릴 태그문자열 담길 빈 그릇
+	//resultText라는 변수는 앞으로 반복문을 통해 문자열로 반복돌릴 태그문자열 담길 빈 그릇
 	let resultText = "";
 	//counter라는 변수에는 앞으로 반복문을 통해 카운터 증가값을 담을 초기 변수(앞으로 값을 담을 빈 그릇)
 	let counter = 0;
